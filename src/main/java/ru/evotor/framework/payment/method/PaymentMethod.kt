@@ -1,4 +1,4 @@
-package ru.evotor.framework.payment
+package ru.evotor.framework.payment.method
 
 import java.util.*
 

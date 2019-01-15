@@ -1,6 +1,7 @@
 package ru.evotor.framework.receipt
 
 import ru.evotor.framework.FutureFeature
+import ru.evotor.framework.payment.AmountOfRubles
 import ru.evotor.framework.receipt.position.Position
 import java.math.BigDecimal
 import java.util.*
@@ -12,6 +13,10 @@ sealed class ReceiptDraft {
     abstract val taxationSystem: TaxationSystem
     abstract val positions: List<Position>
     abstract val payments: Map<ru.evotor.framework.payment.Payment, BigDecimal>
+
+    fun getTotalSum() = payments.keys.fold(AmountOfRubles(0)) { acc, payment ->
+        (acc + payment.sum) as AmountOfRubles
+    }
 }
 
 data class FiscalReceiptDraft(

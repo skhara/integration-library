@@ -1,5 +1,6 @@
 package ru.evotor.framework.payment
 
+import ru.evotor.framework.payment.method.PaymentMethod
 import java.util.*
 
 /**
@@ -93,7 +94,7 @@ class CashlessPayment internal constructor(
          */
         val pinpad: Pinpad?,
         /**
-         * RRN (Идентификатор оплаты в банке, который про)
+         * RRN (Идентификатор оплаты в банке, который производил транзакцию)
          */
         val rrn: String
 ) : Payment(uuid, sum, paymentMethod) {
@@ -107,7 +108,7 @@ class CashlessPayment internal constructor(
              */
             sum: AmountOfRubles,
             /**
-             * RRN (Идентификатор оплаты в банке)
+             * RRN (Идентификатор оплаты в банке, который производил транзакцию)
              */
             rrn: String
     ) : this(uuid, sum, null, null, rrn)
