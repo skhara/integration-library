@@ -1,7 +1,10 @@
-package ru.evotor.framework.receipt
+package ru.evotor.framework.receipt.formation
 
 import ru.evotor.framework.FutureFeature
 import ru.evotor.framework.payment.AmountOfRubles
+import ru.evotor.framework.receipt.NonFiscalReceipt
+import ru.evotor.framework.receipt.SettlementType
+import ru.evotor.framework.receipt.TaxationSystem
 import ru.evotor.framework.receipt.position.Position
 import java.math.BigDecimal
 import java.util.*

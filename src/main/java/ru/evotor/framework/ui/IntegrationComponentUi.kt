@@ -11,7 +11,7 @@ sealed class IntegrationComponentUi {
     abstract val labelColor: Int
 }
 
-data class PaymentMethodUi internal constructor(
+data class PaymentMethodComponentUi internal constructor(
         override val appUuid: UUID,
         override val backgroundColor: Int?,
         override val icon: Drawable?,

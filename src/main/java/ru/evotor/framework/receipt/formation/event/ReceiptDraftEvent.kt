@@ -1,4 +1,4 @@
-package ru.evotor.framework.receipt.event
+package ru.evotor.framework.receipt.formation.event
 
 import java.util.*
 

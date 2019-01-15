@@ -1,4 +1,4 @@
-package ru.evotor.framework.receipt.event.handler.service
+package ru.evotor.framework.receipt.formation.event.handler.service
 
 import ru.evotor.framework.payment.method.event.listener.PaymentMethodEventListener
 
