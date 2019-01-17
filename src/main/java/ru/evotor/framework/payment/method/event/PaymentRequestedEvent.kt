@@ -47,5 +47,5 @@ data class PaymentRequestedEvent(
         }
     }
 
-    data class ErrorResult(val message: String) : Result()
+    data class ErroneousResult(val message: String) : Result()
 }
