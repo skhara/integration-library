@@ -5,7 +5,7 @@ import ru.evotor.framework.payment.method.event.listener.PaymentMethodEventListe
 open class SellIntegrationService {
     open fun handleBeforePositionsEditedEvent() = Unit
 
-    open fun handleReceiptDraftDiscountRequestedEvent() = Unit
+    open fun handleReceiptDiscountRequestedEvent() = Unit
 
     open fun handleReceiptDraftSplitRequestedEvent() = Unit
 
