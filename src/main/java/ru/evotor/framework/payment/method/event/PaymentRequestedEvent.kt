@@ -12,7 +12,7 @@ data class PaymentRequestedEvent(
     abstract class Result internal constructor()
 
     class SuccessfulResult internal constructor(
-            val sum: AmountOfRubles,
+            val amount: AmountOfRubles,
             val paymentMean: PaymentMean,
             val rrn: String?,
             val pinpad: Pinpad?,
@@ -28,7 +28,7 @@ data class PaymentRequestedEvent(
             if (this === other) return true
             if (other !is SuccessfulResult) return false
 
-            if (sum != other.sum) return false
+            if (amount != other.amount) return false
             if (paymentMean != other.paymentMean) return false
             if (rrn != other.rrn) return false
             if (pinpad != other.pinpad) return false
@@ -38,7 +38,7 @@ data class PaymentRequestedEvent(
         }
 
         override fun hashCode(): Int {
-            var result = sum.hashCode()
+            var result = amount.hashCode()
             result = 31 * result + paymentMean.hashCode()
             result = 31 * result + (rrn?.hashCode() ?: 0)
             result = 31 * result + (pinpad?.hashCode() ?: 0)

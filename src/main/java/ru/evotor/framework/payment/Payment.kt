@@ -14,7 +14,7 @@ class Payment internal constructor(
         /**
          * Сумма
          */
-        val sum: AmountOfRubles,
+        val amount: AmountOfRubles,
         /**
          * Использованное платёжное средство
          */
@@ -30,7 +30,7 @@ class Payment internal constructor(
         /**
          * RRN (Идентификатор оплаты в банке, который производил транзакцию)
          */
-        val rrn: String
+        val rrn: String?
 ) {
     constructor(
             /**
@@ -40,7 +40,7 @@ class Payment internal constructor(
             /**
              * Сумма
              */
-            sum: AmountOfRubles,
+            amount: AmountOfRubles,
             /**
              * Использованное платёжное средство
              */
@@ -48,10 +48,10 @@ class Payment internal constructor(
             /**
              * RRN (Идентификатор оплаты в банке, который производил транзакцию)
              */
-            rrn: String
+            rrn: String? = null
     ) : this(
             uuid,
-            sum,
+            amount,
             paymentMean,
             null,
             null,
@@ -63,7 +63,7 @@ class Payment internal constructor(
         if (other !is Payment) return false
 
         if (uuid != other.uuid) return false
-        if (sum != other.sum) return false
+        if (amount != other.amount) return false
         if (paymentMean != other.paymentMean) return false
         if (paymentMethod != other.paymentMethod) return false
         if (pinpad != other.pinpad) return false
@@ -74,7 +74,7 @@ class Payment internal constructor(
 
     override fun hashCode(): Int {
         var result = uuid.hashCode()
-        result = 31 * result + sum.hashCode()
+        result = 31 * result + amount.hashCode()
         result = 31 * result + paymentMean.hashCode()
         result = 31 * result + (paymentMethod?.hashCode() ?: 0)
         result = 31 * result + (pinpad?.hashCode() ?: 0)
