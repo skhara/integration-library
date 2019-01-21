@@ -15,11 +15,12 @@ sealed class ReceiptDraft {
     abstract val settlementType: SettlementType
     abstract val taxationSystem: TaxationSystem
     abstract val positions: List<Position>
-    abstract val payments: Map<ru.evotor.framework.payment.Payment, AmountOfRubles>
+    abstract val amountInParts: Map<ru.evotor.framework.payment.Payment, AmountOfRubles>
 
-    fun getTotalSum() = payments.keys.fold(AmountOfRubles(0)) { acc, payment ->
-        (acc + payment.amount) as AmountOfRubles
-    }
+    val amountPaid: AmountOfRubles
+        get() = amountInParts.values.reduce {
+            acc, amountOfRubles -> (acc + amountOfRubles) as AmountOfRubles
+        }
 }
 
 data class FiscalReceiptDraft(
@@ -28,7 +29,7 @@ data class FiscalReceiptDraft(
         override val taxationSystem: TaxationSystem,
         val customerPhoneOrEmail: String? = null,
         override val positions: List<Position>,
-        override val payments: Map<ru.evotor.framework.payment.Payment, AmountOfRubles>,
+        override val amountInParts: Map<ru.evotor.framework.payment.Payment, AmountOfRubles>,
         val needToPrint: Boolean = true
 ) : ReceiptDraft()
 
@@ -42,5 +43,5 @@ data class NonFiscalReceiptDraft(
         val settlementsPlace: String,
         override val taxationSystem: TaxationSystem,
         override val positions: List<Position>,
-        override val payments: Map<ru.evotor.framework.payment.Payment, AmountOfRubles>
+        override val amountInParts: Map<ru.evotor.framework.payment.Payment, AmountOfRubles>
 ) : ReceiptDraft()

@@ -5,29 +5,29 @@ import java.util.*
 /**
  * Способ оплаты
  */
-sealed class PaymentMethod(val appUuid: UUID) {
+sealed class PaymentMethod(val uuid: UUID) {
     /**
      * Стандартный способ оплаты "Наличные"
      */
-    class DefaultCash : PaymentMethod(APP_UUID) {
+    class DefaultCash : PaymentMethod(UUID) {
         companion object {
-            private val APP_UUID = java.util.UUID.fromString("")
+            private val UUID = java.util.UUID.fromString("")
         }
     }
 
     /**
      * Стандартный способ оплаты "Банковская карта"
      */
-    class DefaultCashless : PaymentMethod(APP_UUID) {
+    class DefaultCashless : PaymentMethod(UUID) {
         companion object {
-            private val APP_UUID = java.util.UUID.fromString("")
+            private val UUID = java.util.UUID.fromString("")
         }
     }
 
     /**
      * Способ оплаты через стороннюю интеграцию, установленную на терминал из Эвотор.Маркета
      */
-    class ThirdPartyIntegration(appUuid: UUID) : PaymentMethod(appUuid) {
+    class ThirdPartyIntegration(uuid: UUID) : PaymentMethod(uuid) {
 
      /*   class Query : FilterBuilder<Query, Query.SortOrder, ThirdPartyIntegration>() {
             val appUuid = addFieldFilter<UUID>("")

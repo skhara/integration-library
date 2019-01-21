@@ -9,7 +9,6 @@ import ru.evotor.framework.payment.method.event.listener.PaymentMethodEventListe
 class Sservice : SellIntegrationService() {
     override val paymentMethodEventListener = object : PaymentMethodEventListener {
         override fun handlePaymentRequestedEvent(event: PaymentRequestedEvent): PaymentRequestedEvent.Result {
-            Thread.sleep(100L)
             return PaymentRequestedEvent.SuccessfulResult(AmountOfRubles(10), PaymentMean.CASH)
         }
 
