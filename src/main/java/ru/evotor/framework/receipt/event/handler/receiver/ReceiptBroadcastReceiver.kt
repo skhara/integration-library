@@ -2,7 +2,7 @@ package ru.evotor.framework.receipt.event.handler.receiver
 
 import android.content.Context
 import android.os.Bundle
-import ru.evotor.framework.core.BroadcastEventReceiver
+import ru.evotor.framework.core.IntegrationBroadcastReceiver
 import ru.evotor.framework.receipt.event.ReceiptDeletedEvent
 import ru.evotor.framework.receipt.event.ReceiptCompletedEvent
 import ru.evotor.framework.receipt.event.ReceiptCreatedEvent
@@ -17,7 +17,7 @@ abstract class ReceiptBroadcastReceiver(
         private val actionPositionRemoved: String,
         private val actionReceiptDeleted: String,
         private val actionReceiptCompleted: String
-) : BroadcastEventReceiver() {
+) : IntegrationBroadcastReceiver() {
 
     protected abstract fun handleReceiptCreatedEvent(context: Context, event: ReceiptCreatedEvent)
 

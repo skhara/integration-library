@@ -3,7 +3,7 @@ package ru.evotor.framework.kkt.event.handler.receiver
 import android.content.Context
 import android.os.Bundle
 import ru.evotor.framework.core.RequiresIntentAction
-import ru.evotor.framework.core.BroadcastEventReceiver
+import ru.evotor.framework.core.IntegrationBroadcastReceiver
 import ru.evotor.framework.kkt.event.CashInsertedEvent
 import ru.evotor.framework.kkt.event.CashWithdrawnEvent
 
@@ -11,7 +11,7 @@ import ru.evotor.framework.kkt.event.CashWithdrawnEvent
  * Широковещательный приёмник событий кассы.
  * @see <a href="https://developer.evotor.ru/docs/beta/doc_java_broadcastreceiver.html">Использование широковещательного приёмника</a>
  */
-open class KktBroadcastReceiver : BroadcastEventReceiver() {
+open class KktBroadcastReceiver : IntegrationBroadcastReceiver() {
 
     /**
      * Обработчик событий внесения наличности в кассу.

@@ -2,13 +2,8 @@ package ru.evotor.framework.payment.method.event
 
 import ru.evotor.framework.payment.Payment
 import ru.evotor.framework.payment.Pinpad
-import ru.evotor.framework.receipt.formation.event.ReceiptDraftEvent
-import java.util.*
 
-data class PaymentCancellationRequestedEvent(
-        override val receiptDraftUuid: UUID,
-        val payment: Payment
-) : ReceiptDraftEvent() {
+data class PaymentCancellationRequestedEvent(val payment: Payment) {
     abstract class Result internal constructor()
 
     class SuccessfulResult internal constructor(

@@ -3,14 +3,14 @@ package ru.evotor.framework.device.cash_drawer.event.handler.receiver
 import android.content.Context
 import android.os.Bundle
 import ru.evotor.framework.core.RequiresIntentAction
-import ru.evotor.framework.core.BroadcastEventReceiver
+import ru.evotor.framework.core.IntegrationBroadcastReceiver
 import ru.evotor.framework.device.cash_drawer.event.CashDrawerOpenedEvent
 
 /**
  * Широковещательный приёмник событий денежного ящика.
  * @see <a href="https://developer.evotor.ru/docs/beta/doc_java_broadcastreceiver.html">Использование широковещательного приёмника</a>
  */
-abstract class CashDrawerBroadcastReceiver : BroadcastEventReceiver() {
+abstract class CashDrawerBroadcastReceiver : IntegrationBroadcastReceiver() {
 
     /**
      * Обработчик событий открытия денежного ящика.

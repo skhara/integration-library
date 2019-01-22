@@ -4,7 +4,6 @@ import android.graphics.drawable.Drawable
 import java.util.*
 
 sealed class IntegrationComponentUi {
-    abstract val appUuid: UUID
     abstract val backgroundColor: Int?
     abstract val icon: Drawable?
     abstract val label: String
@@ -12,7 +11,7 @@ sealed class IntegrationComponentUi {
 }
 
 data class PaymentMethodComponentUi internal constructor(
-        override val appUuid: UUID,
+        val paymentMethodUuid: UUID,
         override val backgroundColor: Int?,
         override val icon: Drawable?,
         override val label: String,

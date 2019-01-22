@@ -3,12 +3,8 @@ package ru.evotor.framework.payment.method.event
 import ru.evotor.framework.payment.AmountOfRubles
 import ru.evotor.framework.payment.PaymentMean
 import ru.evotor.framework.payment.Pinpad
-import ru.evotor.framework.receipt.formation.event.ReceiptDraftEvent
-import java.util.*
 
-data class PaymentRequestedEvent(
-        override val receiptDraftUuid: UUID
-) : ReceiptDraftEvent() {
+data class PaymentRequestedEvent(val amount: AmountOfRubles) {
     abstract class Result internal constructor()
 
     class SuccessfulResult internal constructor(
