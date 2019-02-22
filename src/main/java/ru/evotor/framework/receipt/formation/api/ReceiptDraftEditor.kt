@@ -5,7 +5,7 @@ import ru.evotor.framework.receipt.TaxationSystem
 import ru.evotor.framework.receipt.position.PositionChangeIntention
 import java.util.*
 
-sealed class ReceiptDraftEditor(val receiptDraftUuid: UUID) {
+sealed class ReceiptDraftEditor(private val receiptDraftUuid: UUID) {
     protected var newReceiptDraftUuid: UUID? = null
     protected var settlementType: SettlementType? = null
     protected var taxationSystem: TaxationSystem? = null

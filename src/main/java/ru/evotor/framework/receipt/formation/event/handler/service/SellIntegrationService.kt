@@ -9,7 +9,7 @@ import ru.evotor.framework.receipt.formation.event.ReceiptDraftSplitRequestedEve
 open class SellIntegrationService {
     open fun handleBeforePositionsChangedEvent(event: BeforePositionsChangedEvent): BeforePositionsChangedEvent.Result? = null
 
-    fun handleReceiptDiscountRequestedEvent(event: ReceiptDiscountRequestedEvent): ReceiptDiscountRequestedEvent.Result? = null
+    open fun handleReceiptDiscountRequestedEvent(event: ReceiptDiscountRequestedEvent): ReceiptDiscountRequestedEvent.Result? = null
 
     open fun handleReceiptDraftSplitRequestedEvent(event: ReceiptDraftSplitRequestedEvent): ReceiptDraftSplitRequestedEvent.Result? = null
 
