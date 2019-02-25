@@ -1,7 +1,7 @@
 package ru.evotor.framework.payment.method.event
 
 import ru.evotor.framework.payment.Payment
-import ru.evotor.framework.payment.Pinpad
+import ru.evotor.framework.device.pinpad.Pinpad
 
 data class PaymentCancellationRequestedEvent(val payment: Payment) {
     abstract class Result internal constructor()

@@ -2,7 +2,7 @@ package ru.evotor.framework.payment.method.event
 
 import ru.evotor.framework.payment.AmountOfRubles
 import ru.evotor.framework.payment.PaymentMean
-import ru.evotor.framework.payment.Pinpad
+import ru.evotor.framework.device.pinpad.Pinpad
 
 data class PaymentRequestedEvent(val amount: AmountOfRubles) {
     abstract class Result internal constructor()

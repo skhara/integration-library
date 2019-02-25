@@ -1,5 +1,6 @@
 package ru.evotor.framework.payment
 
+import ru.evotor.framework.device.pinpad.Pinpad
 import ru.evotor.framework.payment.method.PaymentMethod
 import java.util.*
 
