@@ -4,7 +4,7 @@ import ru.evotor.framework.payment.method.event.listener.PaymentMethodIntegratio
 import ru.evotor.framework.receipt.formation.event.AdditionalPrintingRequestedEvent
 import ru.evotor.framework.receipt.formation.event.BeforePositionsChangedEvent
 import ru.evotor.framework.receipt.formation.event.ReceiptDraftSplitRequestedEvent
-import ru.evotor.framework.receipt.formation.event.view.ReceiptDiscountIntegrationView
+import ru.evotor.framework.receipt.formation.event.handler.view.ReceiptDiscountIntegrationView
 
 open class SellIntegrationService {
     open fun handleBeforePositionsChangedEvent(event: BeforePositionsChangedEvent): BeforePositionsChangedEvent.Result? = null

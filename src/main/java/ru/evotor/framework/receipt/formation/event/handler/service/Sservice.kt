@@ -5,7 +5,7 @@ import ru.evotor.framework.payment.method.event.PaymentRequestedEvent
 import ru.evotor.framework.payment.method.event.listener.PaymentMethodIntegrationView
 import ru.evotor.framework.receipt.formation.event.AdditionalPrintingRequestedEvent
 import ru.evotor.framework.receipt.formation.event.ReceiptDiscountRequestedEvent
-import ru.evotor.framework.receipt.formation.event.view.ReceiptDiscountIntegrationView
+import ru.evotor.framework.receipt.formation.event.handler.view.ReceiptDiscountIntegrationView
 
 class Sservice : SellIntegrationService() {
     override fun handleAdditionalPrintingRequestedEvent(event: AdditionalPrintingRequestedEvent): AdditionalPrintingRequestedEvent.Result? {

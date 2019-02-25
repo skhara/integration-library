@@ -1,4 +1,4 @@
-package ru.evotor.framework.receipt.formation.event.view
+package ru.evotor.framework.receipt.formation.event.handler.view
 
 import ru.evotor.framework.receipt.formation.event.ReceiptDiscountRequestedEvent
 
